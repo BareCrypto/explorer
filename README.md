@@ -5,13 +5,11 @@ An open source block explorer written in node.js.
 
 ### See it in action
 
-*  [Deutsche eMark](http://b.emark.tk/)
+*  [BARE](explorer.bare.network)
 *  [Sphere](http://sphere.iquidus.io)
 *  [Vertcoin](http://explorer.vertcoin.info/)
-*  [Vivo](http://vivo.explorerz.top:3003)
 *  [Florincoin](https://florincoin.info/info)
 *  [Maxcoin Explorer 1](https://explorer.maxcoinproject.net/)
-*  [Maxcoin Explorer 2](https://explorer2.maxcoinproject.net/)
 
 
 *note: If you would like your instance mentioned here contact me*
@@ -34,15 +32,15 @@ Create databse:
 
 Create user with read/write access:
 
-    > db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+    > db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ], mechanisms: [ "SCRAM-SHA-256" ], passwordDigestor: "server" } )
 
 *note: If you're using mongo shell 2.4.x, use the following to create your user:
 
-    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite"] })
+    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite"], mechanisms: [ "SCRAM-SHA-256" ], passwordDigestor: "server" })
 
 ### Get the source
 
-    git clone https://github.com/iquidus/explorer explorer
+    git clone https://github.com/BareCrypto/explorer explorer
 
 ### Install node modules
 
@@ -139,7 +137,11 @@ Where [SIZE] is an integer higher than the default.
 ### License
 
 Copyright (c) 2015, Iquidus Technology  
-Copyright (c) 2015, Luke Williams  
+Copyright (c) 2015, Luke Williams 
+Copyright (c) 2019, crypto-node / Bare Core 
+
+thanks to @iamjustarandomguy for the PR adding crex24 support, we build it in.
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
